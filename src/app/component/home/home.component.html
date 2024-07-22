@@ -1,0 +1,28 @@
+<div class="container-fluid page">
+  <div class="d-flex justify-content-between align-items-center p-3 mt-2">
+    <div class="d-flex align-items-center">
+      <span class="mr-3">Home</span>
+    </div>
+    <form class="form-inline my-2 my-lg-0">
+      <!-- <input class="form-control mr-sm-2" type="search" placeholder="City" aria-label="Search"
+        (keyup)="searchProperty($event)" (blur)="hideSearch()"> -->
+        <input class="form-control mr-sm-2" type="search" placeholder="City" aria-label="Search" [(ngModel)]="search" name="demo"
+        (keyup)="searchProperty()" (blur)="hideSearch()">
+
+    </form>
+  </div>
+
+  <div fxLayout="row wrap" fxLayoutGap="17px" fxLayoutAlign="start start">
+    <div *ngFor="let house of homes">
+      <div class="card" style="width: 18rem; margin-bottom: 10px;">
+        <img class="card-img-top fixed-card-image" [src]="getFile(house.photo)" alt="Property Image">
+        <div class="card-body">
+          <p class="card-text">{{house.propertyName}} : {{ house.bhkType }} {{ house.location.address }} {{ house.location.city }}</p>
+          <p class="card-text" style="border: 2px;">Price : <b style="color: red;">{{ house.price }}.00 INR </b> |
+            {{ house.area }} sqft</p>
+          <a [routerLink]="'/details/' + house.propertyId" class="btn btn-primary">View Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

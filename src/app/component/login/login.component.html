@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome To Registration</title>
+</head>
+
+<body>
+  <br>
+  <div class="container col-md-6">
+
+    <div class="card">
+      <div class="card-body">
+        <h1 style="text-align: center;">Welcome To LogIn</h1>
+        <form [formGroup]="loginform">
+          <div class="container text-center">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-Pnt1rnG5_oeghvwAVvVBhcLrR5yZRqLRFw&usqp=CAU"
+              alt="" class="profile-image" />
+
+          </div>
+          <fieldset class="form-group">
+            <label for="username">User Name</label>
+            <i class="bi bi-person"></i>
+            <input [(ngModel)]="loginData.username" type="text" class="form-control"
+              formControlName="usernameFormControl" placeholder="User Name *" required="">
+            <div class="invalid-tooltip">
+              Please choose a unique and valid username.
+            </div>
+            <span *ngIf="validateusername && validateusername.invalid && validateusername.touched"
+              style="color:red">*Enter the your username!!</span>
+          </fieldset>
+          <fieldset class="form-group">
+            <label for="password">password</label>
+            <input [(ngModel)]="loginData.password" type="password" class="form-control"
+              formControlName="passwordFormControl" placeholder="Password *" required>
+            <span *ngIf="validatepassword && validatepassword.invalid && validatepassword.touched"
+              style="color:red">*Enter the your password!!</span>
+
+          </fieldset>
+        </form>
+        <tr colspan="2"><input type="submit" value="Login" class="btn btn-success" [disabled]="loginform.invalid"
+            (click)="formSubmit()" style="padding: 5px 5px; ">
+        </tr>
+      </div>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,38 @@
+<div class="container col-md-6">
+    <h1 style="text-align: center;">Welcome To Update Page</h1>
+    <div class="card">
+        <div class="card-body">
+            <form *ngIf="propertyDataLoaded">
+                <fieldset class="form-group">
+                    <label for="furnishedFormControl">Furnished Type</label>
+                    <select [(ngModel)]="propertyData.furnishedType" class="form-control form-select"
+                        name="furnishedFormControl">
+                        <option value="Unfurnished">Unfurnished</option>
+                        <option value="Semifurnished">Semifurnished</option>
+                        <option value="Fullyfurnished">Fullyfurnished</option>
+                    </select>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="rentFormControl">Rent</label>
+                    <input [(ngModel)]="propertyData.price" type="number" class="form-control" required
+                        placeholder="00000" name="rentFormControl" pattern="^\d{4,6}$">
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="statusFormControl">Status</label>
+                    <select [(ngModel)]="propertyData.status" class="form-control form-select"
+                        name="statusFormControl">
+                        <option value="vacent">Vacent</option>
+                        <option value="booked">Booked</option>
+                    </select>
+                </fieldset>
+
+                <div>
+                    <input type="submit" value="Update" class="btn btn-success" (click)="updateProperty()">
+                </div>
+            </form>
+            <div *ngIf="!propertyDataLoaded">Loading data...</div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+    <div class="container" style="padding: 10px 5px;">
+        <div class="card" >
+            <h1 class="cl">Your Profile Details</h1>
+            <div class="bootstrap-wrapper">
+                <div class="container text-center">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-Pnt1rnG5_oeghvwAVvVBhcLrR5yZRqLRFw&usqp=CAU"
+                        alt="" class="profile-image" />
+                    <h1 class="mt-20">{{ user.name }}</h1>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                        <table class="table text-center">
+                            <tr>
+                                <td>ID</td>
+                                <td>{{ user.userId }}</td>
+                            </tr>
+                            <tr>
+                                <td>Username</td>
+                                <td>{{ user.username }}</td>
+                            </tr>
+                            <tr>
+                                <td>Username</td>
+                                <td>{{ user.name }}</td>
+                            </tr>
+
+                            <tr>
+                                <td>Email</td>
+                                <td>{{ user.email }}</td>
+                            </tr>
+
+                            <tr>
+                                <td>Phone No.</td>
+                                <td>{{ user.phone }}</td>
+                            </tr>
+
+                            <tr>
+                                <td>User Role</td>
+                                <td>{{ user.role }}</td>
+                            </tr>
+                        </table>
+
+
+                    </div>
+                </div>
+                <!-- <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"
+                    class="btn btn-primary" style="padding: 5px 5px;margin-left:40%; margin-bottom:10px"
+                    [routerLink]="'/admin/update/' + user.userId">Update</button> -->
+                    <button type="button" class="btn btn-primary" style="padding: 5px 5px;margin-left:40%; margin-bottom:10px"
+                [routerLink]="'../userupdate/' + user.userId" >Update</button>
+            </div>
+            
+        </div>
+    </div>
+</body>
+
+</html>
+<!-- Modal -->
+<div class="modal fade " id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="text-center model-title" id="exampleModalLongTitle">Update Profile</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-row">
+                        <label for="inputName4">Name</label>
+                        <input [(ngModel)]="newUser.name" id="name" type="text" class="form-control" name="fullName">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail5">Email</label>
+                        <input [(ngModel)]="newUser.email" id="email" type="email" class="form-control" id="inputEmail4"
+                            name="email">
+                    </div>
+                    <div class="form-row">
+                        <label for="inputPhone6">Phone</label>
+                        <input [(ngModel)]="newUser.phone" id="phone" type="tel" class="form-control" name="phone">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" (click)="update()">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>

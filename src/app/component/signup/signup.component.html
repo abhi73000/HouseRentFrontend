@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome To Registration</title>
+
+</head>
+
+<body>
+    <br>
+
+    <div class="container col-md-6">
+        <h1 style="text-align: center;">Welcome To Registration</h1>
+        <div class="card">
+            <div class="card-body">
+               <!-- {{userData | json}} -->
+                <form [formGroup]="signupform">
+
+                    <fieldset class="form-group">
+                        <label for="username">User Name</label>
+                        <input [(ngModel)]="userData.username" type="text" class="form-control"
+                            formControlName="usernameFormControl" placeholder="User Name *" >
+                        <span *ngIf="validateusername && validateusername.invalid && validateusername.touched"
+                            style="color:red">*Enter the your username!!</span>
+                    </fieldset>
+
+
+                    <fieldset class="form-group">
+                        <label for="name">Full Name</label>
+                        <input [(ngModel)]="userData.name" type="text" class="form-control"
+                            formControlName="nameFormControl" placeholder="Full Name *" onkeydown="return /[a-z]/i.test(event.key)">
+                        <span *ngIf="validatename && validatename.invalid && validatename.touched"
+                            style="color:red">*Enter the your fullname!! Ex. Allen</span>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label for="email">Email</label>
+                        <input [(ngModel)]="userData.email" type="email" class="form-control"
+                            formControlName="emailFormControl" placeholder="Email *">
+                        <span *ngIf="validateemail && validateemail.invalid && validateemail.touched"
+                            style="color:red">*Enter the your Email end with @gamil.com!!</span>
+                    </fieldset>
+
+
+                    <fieldset class="form-group">
+                        <label for="password">Password</label>
+                        <input [(ngModel)]="userData.password" type="password" class="form-control"
+                            formControlName="passwordFormControl" placeholder="Password *">
+                            <span *ngIf="validatepassword && validatepassword.invalid && validatepassword.touched"
+                        style="color:red">*Enter the your password minimum length 8!!</span>
+                    </fieldset>
+                    
+
+                    <fieldset class="form-group">
+                        <label for="phone">Phone</label>
+                        <input [(ngModel)]="userData.phone" type="tel" maxlength="10" class="form-control"
+                            formControlName="phoneFormControl" (input)="filterNonNumeric($event)" placeholder="Phone *">
+                            <span *ngIf="validatephonenumber && validatephonenumber.invalid && validatephonenumber.touched"
+                        style="color:red">*Enter the your Correct number!!</span>
+                    </fieldset>
+                    
+
+
+                    <div>
+                        <div class="form-check">
+                            <input [(ngModel)]="userData.role" type="radio" class="form-check-input"
+                                formControlName="role" value="owner" checked> <label class="form-check-label"
+                                for="role">Do you want to list your property</label>
+                        </div>
+                        <div class="form-check">
+                            <input [(ngModel)]="userData.role" type="radio" class="form-check-input"
+                                formControlName="role" value="tenant"> <label class="form-check-label"
+                                for="role">Search property for rent</label>
+                        </div>
+                        <span *ngIf="validaterole && validaterole.invalid && validaterole.touched"
+                            style="color:red">*choose
+                            any one role, should be mandatory!!</span>
+
+                    </div>
+
+                </form>
+                <tr colspan="2"><input  type="submit" value="SignUp" class="btn btn-success"
+                        [disabled]="signupform.invalid" (click)="formSubmit()">
+                </tr>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

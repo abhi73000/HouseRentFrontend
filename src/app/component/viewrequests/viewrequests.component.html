@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+
+</head>
+
+<body>
+  <div class="container">
+    <h1 style="text-align: center;">Requests</h1>
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Image</th>
+                <!-- <th scope="col">ownerName</th> -->
+                <th scope="col">T Name</th>
+                <th scope="col">Phone No.</th>
+                <th scope="col">Email</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let request of requests">
+                <td><img [src]="getFile(request.property.photo)" alt="Property Image"></td>
+                <!-- <td>{{request.user.userId}}</td> !-->
+                <!-- <td>{{request.property.user.name}}</td> -->
+                <td>{{request.user.name}}</td>
+                <td>{{request.user.phone}}</td>
+                <td>{{request.user.email}}</td>
+                <td><input type="submit" value="Delete" class="btn btn-danger"
+                        (click)="deleteRequest(request.requestId)" style="margin-right: 10px;">
+                    <!-- <input [routerLink]="" type="submit" value="View" class="btn btn-primary"> -->
+                </td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</body>
+
+</html>

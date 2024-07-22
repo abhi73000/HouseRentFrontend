@@ -1,0 +1,31 @@
+<div fxLayout="row wrap" fxLayoutGap="17px" fxLayoutAlign="start start">
+  <mat-toolbar>
+    <mat-toolbar-row class="justify-content-between">
+
+      <h1><button mat-icon-button (click)="toggleSidebar()">
+          <mat-icon>menu</mat-icon>
+        </button>House Rent</h1>
+
+      <div class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button routerLink="/" class="btn btn-primary" type="submit" color="primary">Search</button>
+        <img src="./assets/images/user.jpg" alt="" class="user-image mr-1 p-2" />
+
+        <a *ngIf="!isLoggedIn" [routerLink]="'/login'" mat-button class="user mt-2 d-flex align-items-center">Login</a>
+
+        <a *ngIf="!isLoggedIn" [routerLink]="'/signup'" mat-button
+          class="user mt-2 d-flex align-items-center">Register</a>
+
+        <a *ngIf="isLoggedIn && user" mat-button class="user mt-2 d-flex align-items-center">{{ user.username }}</a>
+
+
+
+        <a (click)="logout()" *ngIf="isLoggedIn" mat-button class="user mt-2 d-flex align-items-center">LogOut</a>
+
+      </div>
+
+
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+</div>

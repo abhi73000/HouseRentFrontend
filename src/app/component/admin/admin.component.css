@@ -1,0 +1,35 @@
+/* .page {
+    color: rgb(16, 9, 9);
+    padding: 0 1rem;
+    background: white;
+  
+    &__box {
+      min-height: 120px;
+      background: #00060f;
+      margin: 0 -1rem;
+      font-size: 36px;
+    }
+  
+    &__content {
+      min-height: calc(100vh - 178px);
+      border-radius: 10px;
+      margin-top: -2rem;
+      background: white;
+      color: black;
+      font-size: 2rem;
+  
+      &-data {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+  
+  .example-card {
+    max-width: 18rem;
+    margin-bottom: 16px;
+  
+  }
+  
+   */

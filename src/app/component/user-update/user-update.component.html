@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome To Registration</title>
+</head>
+
+<body>
+    <br>
+
+    <div class="container col-md-6">
+        <h1 style="text-align: center;">Welcome To Update Page</h1>
+        <div class="card">
+            <div class="card-body">
+                <!-- {{userData | json}} -->
+                <form *ngIf="newUser">
+
+                    <!-- <fieldset class="form-group">
+                        <label for="userId">User Id</label>
+                        <input [(ngModel)]="newUser.userId" type="text" class="form-control" name="userIdFormControl"
+                            placeholder="User Name *" readonly>
+
+                    </fieldset> -->
+                    <fieldset class="form-group">
+                        <label for="username">User Name</label>
+                        <input [(ngModel)]="newUser.username" type="text" class="form-control"
+                            name="usernameFormControl" placeholder="User Name *" readonly>
+
+                    </fieldset>
+
+
+                    <fieldset class="form-group">
+                        <label for="name">Full Name</label>
+                        <input [(ngModel)]="newUser.name" type="text" class="form-control" name="nameFormControl"
+                            placeholder="Full Name *">
+
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label for="email">Email</label>
+                        <input [(ngModel)]="newUser.email" type="email" class="form-control" name="emailFormControl"
+                            placeholder="Email *">
+
+                    </fieldset>
+
+
+
+                    <fieldset class="form-group">
+                        <label for="phone">Phone</label>
+                        <input [(ngModel)]="newUser.phone" type="tel" maxlength="10" class="form-control"
+                            name="phoneFormControl" placeholder="Phone *">
+
+                    </fieldset>
+
+
+                </form>
+                <tr colspan="2"><input type="submit" value="Update" class="btn btn-success" (click)="update()">
+                </tr>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<!-- {{newUser | json}} -->

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+
+<body>
+  <div class="container">
+    <h1 style="text-align: center;">Tenant List</h1>
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">User Name</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone No.</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let tenant of tenants">
+            <td>{{tenant.userId}}</td>
+            <td>{{tenant.username}}</td>
+            <td>{{tenant.name}}</td>
+            <td>{{tenant.email}}</td>
+            <td>{{tenant.phone}}</td>
+            <td><input type="submit" value="Delete" class="btn btn-danger" (click)="deleteUser(tenant.userId)" style="margin-right: 10px;">
+              <!-- <input [routerLink]="" type="submit" value="View" class="btn btn-primary"> -->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>

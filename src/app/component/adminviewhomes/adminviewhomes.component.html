@@ -1,0 +1,46 @@
+<div class="container-fluid page">
+    <div class="d-flex page__box p-3 mt-2">
+        <h1>Your Property</h1>
+    </div>
+    <div class="container">
+        <div fxLayout="row wrap" fxLayoutGap="17px" fxLayoutAlign="start start">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Owner Name</th>
+                            <th>Property Type</th>
+                            <th>BHK</th>
+                            <th>Furnished</th>
+                            <th>Price</th>
+                            <th>Address</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of showListespropert">
+                            <td><img [src]="getFile(item.photo)" alt="Property Image"></td>
+                            <td>{{item.user.name}}</td>
+                            <td>{{item.propertyName}}</td>
+                            <td>{{item.bhkType}}</td>
+                            <td>{{item.furnishedType}}</td>
+                            <td>{{item.price}} INR</td>
+                            <td>{{item.location.city}}</td>
+                            <td>{{item.status}}</td>
+
+                            <td><input type="submit" value="Delete" class="btn btn-danger"
+                                    (click)="deleteProperty(item.propertyId)"><br>
+                                    
+                                <!-- <input [routerLink]="'../updateProperty/'+item.propertyId" type="submit" value="Update"
+                                    class="btn btn-primary"> -->
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

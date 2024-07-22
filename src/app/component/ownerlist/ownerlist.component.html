@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+
+<body>
+  <div class="container">
+    <h1 style="text-align: center;">Owners List</h1>
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th>User Name</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone No.</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let owner of owners">
+            <td>{{owner.userId}}</td>
+            <td>{{owner.username}}</td>
+            <td>{{owner.name}}</td>
+            <td>{{owner.email}}</td>
+            <td>{{owner.phone}}</td>
+            <td><input type="submit" value="Delete" class="btn btn-danger" (click)="deleteUser(owner.userId)"
+                style="margin-right: 10px;">
+              <button type="button" class="btn btn-primary" [routerLink]="'../adminviewuserhome/' + owner.userId">View House</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+.page {
+  color: rgb(16, 9, 9);
+  padding: 0 1rem;
+  background: white;
+
+  &__box {
+    min-height: 120px;
+    background: #00060f;
+    margin: 0 -1rem;
+    font-size: 36px;
+  }
+
+  &__content {
+    min-height: calc(100vh - 178px);
+    border-radius: 10px;
+    margin-top: -2rem;
+    background: white;
+    color: black;
+    font-size: 2rem;
+
+    &-data {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  /* Add your responsive CSS styles here */
+  .card {
+    width: 100%; /* Make cards full width on smaller screens */
+    margin-bottom: 20px; /* Adjust margin for spacing */
+  }
+}
+
+.card{
+  transition: all 0.3s;
+}
+.card:hover{
+  transform: scale(1.05);
+}
+img{
+  width: 100%;
+  height: 200%;
+  object-fit: cover;
+}
+
+/* Modify the suggested-result container */
+.suggested-result {
+  position: absolute;
+  display: list-item !important; /* Change display to block */
+  z-index: 10;
+  background-color: white;
+  width: 200px;
+  top: 50px;
+  border: 1px solid #ccc; /* Change border color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add box-shadow for a subtle effect */
+}
+
+/* Modify the suggested-result list items */
+.suggested-result li {
+  border: 1px solid #ccc; /* Change border color */
+  padding: 5px;
+  list-style-type: none; /* Remove bullet points */
+}
+
+/* Modify suggested-result list item links */
+.suggested-result li a {
+  cursor: pointer;
+  color: #333; /* Change text color */
+  text-decoration: none; /* Remove underlines */
+  display: block; /* Make the links fill the entire list item */
+  padding: 5px; /* Add padding for better clickability */
+}
+
+/* Style the links on hover */
+.suggested-result li a:hover {
+  background-color: #f5f5f5; /* Add a background color on hover */
+  color: #000; /* Change text color on hover */
+}
+.fixed-card-image {
+  height: 200px; /* Adjust the height as needed */
+  object-fit: cover; /* Ensures the image fits the specified height without distortion */
+}

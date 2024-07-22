@@ -1,0 +1,41 @@
+body {
+    background-image: url("https://img.freepik.com/free-photo/blue-house-with-blue-roof-sky-background_1340-25953.jpg?t=st=1691919784~exp=1691923384~hmac=cf1aa8b43dabe6184e58a59eadb7a654a36a04edd114d3b782383d0b42659b01&w=900");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 90vh;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-height: 90vh;
+}
+
+/* Style the input elements with a slightly transparent background */
+.card input[type="text"],
+.card input[type="email"],
+.card input[type="password"],
+.card input[type="tel"],
+.card input[type="radio"] {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid black; 
+    border-radius: 5px;
+    padding: 10px; 
+}
+
+table {
+    width: 100%;
+}
+
+td {
+    width: 50%;
+}
+
+span {
+    color: red;
+}

@@ -1,0 +1,162 @@
+<div class="container col-md-6">
+  <h1 style="text-align: center;">Add Property</h1>
+  <div class="card">
+    <div class="card-body">
+      <form [formGroup]="addProperty" class="boarder p-3 rounded-3">
+        <div class="row g-0">
+        </div>
+        <div class="row">
+          <div class="col mb-3">
+            <label for="propertyType">Property Type</label>
+            <select [(ngModel)]="propertyDetails.propertyName" class="form-control" class="form-select "
+              formControlName="propertyTypeFormControl">
+              <option selected>Villa</option>
+              <option>House</option>
+              <option>Apartment</option>
+            </select>
+            <span *ngIf="validatePropertyType && validatePropertyType.invalid && validatePropertyType.touched"
+              style="color:red">*Choose One!</span>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col mb-3">
+
+            <label for="bhk">BHK</label>
+            <select name="bhk" class="form-control form-select" [(ngModel)]="propertyDetails.bhkType"
+              formControlName="bhkFromControl">
+              <option>1 BHK</option>
+              <option>2 BHK</option>
+              <option>3 BHK</option>
+              <option>5 BHK</option>
+              <option>8 BHK</option>
+              <option>10 BHK</option>
+            </select>
+            <span *ngIf="validateBhk && validateBhk.invalid && validateBhk.touched" style="color:red">*Choose
+              One!</span>
+          </div>
+          <div class="col mb-3">
+            <label for="furnishedtype">Furnished Type</label>
+            <select name="furnished" class="form-control form-select" [(ngModel)]="propertyDetails.furnishedType"
+              formControlName="furnishedFormControl">
+              <option>Unfurnished</option>
+              <option>Semifurnished</option>
+              <option>Fullyfurnished</option>
+              
+            </select>
+            <span *ngIf="validatefunished && validatefunished.invalid && validatefunished.touched"
+              style="color:red">*Choose
+              One!</span>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col mb-3">
+            <label for="Area">Area</label>
+            <input type="number" class="form-control" name="area" required [(ngModel)]="propertyDetails.area"
+              placeholder="0000 sqrtFt" formControlName="areaFormControl" pattern="^\d{4}$"
+              onKeyPress="if(this.value.length==4) return false;">
+            <span *ngIf="validateArea && validateArea.invalid && validateArea.touched" style="color:red">*Enter Valid
+              Area!</span>
+          </div>
+
+          <div class="col mb-3">
+            <label for="Rent">Rent</label>
+            <input type="number" class="form-control" name="rent" required="required" placeholder="00000"
+              [(ngModel)]="propertyDetails.price" formControlName="rentFromControl" pattern="^\d{4,6}$"
+              onKeyPress="if(this.value.length==6) return false;">
+            <span *ngIf="validateRent && validateRent.invalid && validateRent.touched" style="color:red">* Enter
+              Rent!</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col mb-3">
+            <label for="country">Country</label>
+            <select name="country" class="form-control form-select" [(ngModel)]="propertyDetails.country"
+              placeholder="Country *" formControlName="countryFormControl">
+              <option>India</option>
+            </select>
+
+            <!-- <input type="text" class="form-control" name="country" required="required"
+              [(ngModel)]="propertyDetails.country" placeholder="Country *" formControlName="countryFormControl"
+              onkeydown="return /[a-z]/i.test(event.key)"> -->
+            <span *ngIf="validateCountry && validateCountry.invalid && validateCountry.touched" style="color:red">*Enter
+              Valid Formate
+              Country! Ex. India <mat-hint></mat-hint></span>
+          </div>
+          <div class="col mb-3">
+            <label for="state">State</label>
+            <select name="state" class="form-control form-select" [(ngModel)]="propertyDetails.state"
+              placeholder="State *" formControlName="stateFormControl" placeholder="State *">
+              <option>Delhi</option>
+              <option>Karnataka</option>
+              <option>Haryana</option>
+              <option>Maharashtra</option>
+              <option>TamilNadu</option>
+              <option>UttarPradesh</option>
+            </select>
+            <!-- <input type="text" class="form-control" name="state" required="required" [(ngModel)]="propertyDetails.state"
+              placeholder="State *" formControlName="stateFormControl" onkeydown="return /[a-z]/i.test(event.key)"> -->
+            <span *ngIf="validateState && validateState.invalid && validateState.touched" style="color:red">*Enter
+              State! Ex. TamilNadu</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col mb-3">
+            <label for="city">City</label>
+            <select name="city" class="form-control form-select" [(ngModel)]="propertyDetails.city" placeholder="City *"
+              formControlName="cityFormControl" placeholder="State *">
+              <option>Bangalore</option>
+              <option>Chennai</option>
+              <option>Delhi</option>
+              <option>Noida</option>
+              <option>Gurgaon</option>
+              <option>Mumbai</option>
+            </select>
+            <!-- <input type="text" class="form-control" name="city" required="required" [(ngModel)]="propertyDetails.city"
+              placeholder="City *" formControlName="cityFormControl"> -->
+            <span *ngIf="validateCity && validateCity.invalid && validateCity.touched" style="color:red">*Enter
+              Location! Ex. Chennai</span>
+          </div>
+          <div class="col mb-3">
+            <label for="location">Location Name</label>
+            <input type="text" class="form-control" name="location" required="required"
+              [(ngModel)]="propertyDetails.address" placeholder="Location *" formControlName="locationFormControl">
+            <span *ngIf="validateLocation && validateLocation.invalid && validateLocation.touched"
+              style="color:red">*Enter Location! Ex. Ramapuram</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col mb-3">
+            <label for="pinCode">Pin Code</label>
+            <input type="number" class="form-control" name="pincode" required="required" placeholder="110011 *"
+              pattern="^\d{6}$" onKeyPress="if(this.value.length==6) return false;"
+              [(ngModel)]="propertyDetails.pincode" formControlName="pinFromControl">
+            <span *ngIf="validatePin && validatePin.invalid && validatePin.touched" style="color:red">*Enter Valid
+              PinCode!</span>
+          </div>
+          <div class="col mb-3">
+            <label for="formFile" class="form-label">Uplode Photo</label>
+            <input class="form-control" #theFile type="file" id="formFile" name="image"
+              [(ngModel)]="propertyDetails.photo2" formControlName="imageFromControl" (change)="onChange($event)">
+            <span *ngIf="validateImage && validateImage.invalid && validateImage.touched" style="color:red">*Choose
+              Image!</span>
+          </div>
+          <div class="row">
+            <div class="radio">
+              <label class="radio-inline"><input type="radio" name="statusFormControl" value="vacent"
+                  [(ngModel)]="propertyDetails.status" formControlName="statusFormControl">Vacent</label>
+              <span *ngIf="validatestatus && validatestatus.invalid && validatestatus.touched" style="color:red">* Choose one
+              </span>
+            </div>
+          </div>
+        </div>
+        <tr colspan="2"><input type="submit" value="Add Property" class="btn btn-success" (click)="submitDetails()" [disabled]="addProperty.invalid">
+      </form>
+    </div>
+  </div>
+</div>

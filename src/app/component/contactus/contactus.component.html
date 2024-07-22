@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - House Rental</title>
+
+</head>
+
+<body>
+    <!-- Contact Us Section -->
+    <section class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Contact Us</h2>
+                <p>If you have any questions or need assistance, please feel free to get in touch with us. We're here to
+                    help you with all your house rental inquiries.</p>
+                <p>Use the contact form below to send us a message, and we'll respond as soon as possible.
+                    Alternatively, you can reach us via email or phone using the contact information provided.</p>
+            </div>
+            <div class="col-md-6">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea class="form-control" id="message" rows="4" placeholder="Your Message"
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" (onclick)="submit()">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    
+
+
+</body>
+<app-footer></app-footer>
+
+</html>
